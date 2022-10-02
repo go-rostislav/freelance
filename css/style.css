@@ -1,0 +1,336 @@
+h1, h2, h3, h4, h5, h6, p, a, ul, li {
+  cursor: pointer;
+}
+
+p, ul, li {
+  font-size: 1.3rem;
+}
+
+.bg-color {
+  background-image: linear-gradient(to right, #8360c3, #2ebf91);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.bg-main {
+  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+}
+
+.loader-wrapper {
+  --line-width: 5px;
+  --curtain-color: #f1faee;
+  --outer-line-color: #a8dadc;
+  --middle-line-color: #457b9d;
+  --inner-line-color: #1d3557;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  /*   transform: translate(-50%, -50%); */
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--outer-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--inner-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--middle-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  background: var(--curtain-color);
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+.loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded Styles */
+.loaded .loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded .loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded .loader {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #1bffd3;
+}
+.navbar-brand:hover {
+  color: #fbff1e;
+}
+
+.nav-link {
+  color: #1bffd3;
+}
+.nav-link:hover {
+  color: #fbff1e;
+}
+
+.navbar-toggler {
+  color: #1bffd3;
+}
+.navbar-toggler span.navbar-toggler-icon {
+  color: #fbff1e;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+  color: #8360c3;
+}
+
+.wrap__section-intro {
+  padding: 100px 0;
+}
+@media only screen and (max-width: 576px) {
+  .wrap__section-intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 15px;
+  }
+}
+
+.text__intro {
+  line-height: 2;
+}
+
+.ml12 {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: #8360c3;
+}
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.list__skills-item {
+  list-style-type: none;
+  line-height: 2;
+}
+.list__skills-item:hover {
+  cursor: pointer;
+  color: #fbff1e;
+}
+@media only screen and (max-width: 576px) {
+  .list__skills {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.btn-link {
+  border: 3px solid #8360c3;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 0;
+}
+.btn-link .link-important {
+  font-size: 2rem;
+  color: #8360c3;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+.btn-link .link-important:hover {
+  color: #fbff1e;
+}
+.btn-link:hover {
+  border: 3px solid #fbff1e;
+}
+.btn-link:focus {
+  border: 3px solid #fbff1e;
+}
+
+@media only screen and (max-width: 576px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+  }
+  .contacts a {
+    padding: 10px 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .wrap__cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap__cards .card {
+    margin-top: 30px;
+  }
+}
+
+.card {
+  border: 3px solid #8360c3;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.link__information {
+  color: #8360c3;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.link__information:hover {
+  color: #fbff1e;
+}
+
+.ml10 {
+  position: relative;
+  color: #8360c3;
+  text-transform: uppercase;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+
+.ml16 {
+  color: #8360c3;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.breadcrumb-item a {
+  color: #fbff1e;
+  text-decoration: none;
+}
+
+.invisible-style a {
+  text-decoration: none;
+  color: #8360c3;
+}
+.invisible-style a:hover {
+  color: #fbff1e;
+}
+@media only screen and (max-width: 991px) {
+  .invisible-style {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .special__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.special__wrap .special-button {
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+@media only screen and (max-width: 991px) {
+  .special__wrap .special-button {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
